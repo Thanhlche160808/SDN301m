@@ -40,6 +40,15 @@ const productController = {
         } catch (error) {
             res.status(404).send({ message: 'Comment not found' });
         }      
+    },
+    getById: async (req, res) => {
+        try {
+            const { id } = req.params;
+            const product = await repositories.productRepository.getById(id);
+            res.status(200).send(product);
+        } catch (err) {
+            res.status(404).send({ message: 'Not found' });
+        }
     }
 };
 export default productController;

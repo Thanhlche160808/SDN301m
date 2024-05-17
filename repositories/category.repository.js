@@ -5,7 +5,7 @@ const categoryRepository = {
         return await Category.create({ name, description});
     },
     getAll: async () => {
-        return await Category.find();;
+        return await Category.find();
     },
 };
 export default categoryRepository;
